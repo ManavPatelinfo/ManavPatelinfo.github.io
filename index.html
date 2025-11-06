@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manav Patel | Mechatronics & Automation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Manav Patel, Mechatronics & Automation Engineering student at MTSU."
+  />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --card: #111827;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 1.25rem;
+      --radius-sm: 0.75rem;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.4);
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: var(--accent-soft);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 2.75rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(2.4rem, 5vw, 3.1rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.7rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.15rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: transparent;
+      color: var(--text);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 60px rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-soft);
+      background: rgba(15, 23, 42, 1);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #0b1120 0, #020617 55%);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.3rem 1.4rem;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at top left,
+        rgba(56, 189, 248, 0.18),
+        transparent 55%
+      );
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .metric {
+      padding: 0.7rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.95);
+      font-size: 0.78rem;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 0.7rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .metric-value {
+      font-weight: 600;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 2.25rem;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1.4rem;
+    }
+
+    .stat-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .stat-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Highlights */
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      background: var(--accent-soft);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #e0f2fe;
+    }
+
+    /* Cards / projects */
+    .cards {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .card-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0.5rem 0 0.4rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .card ul {
+      margin-top: 0.4rem;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* Two-column list sections */
+    .columns-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .list-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .list-items {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .list-items li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.13),
+        rgba(15, 23, 42, 0.95)
+      );
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .contact-text {
+      max-width: 26rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-details {
+      font-size: 0.9rem;
+    }
+
+    .contact-details a {
+      color: #e0f2fe;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 840px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .section-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding-inline: 1.1rem;
+      }
+      .about-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">MANAV PATEL</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>
+          Mechatronics & Automation<br />
+          <span>who actually builds the hardware.</span>
+        </h1>
+        <p class="hero-subtitle">
+          I’m a Mechatronics Engineering student at MTSU (graduating Dec 2025)
+          focused on controls, automation, and hands-on troubleshooting—designing
+          in CAD, wiring systems, and bringing robots, conveyors, and test
+          setups to life.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Controls & Automation</span>
+          <span class="tag">Electrical & Robotics</span>
+          <span class="tag">Hands-on Problem Solver</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">
+            View Projects →
+          </a>
+          <a
+            class="btn btn-ghost"
+            href="YOUR_RESUME_LINK.pdf"
+            target="_blank"
+          >
+            Download Resume
+          </a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-card-inner">
+          <div class="hero-pill">Snapshot</div>
+          <h2>Early-career engineer for controls, robotics, and automation.</h2>
+          <p class="hero-subtitle" style="margin-bottom: 0.8rem;">
+            Comfortable on the shop floor or in the lab: building, wiring, and
+            debugging real systems—not just simulations.
+          </p>
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-label">Graduation</div>
+              <div class="metric-value">Dec 2025 · MTSU</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Focus</div>
+              <div class="metric-value">Controls & Automation</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Looking for</div>
+              <div class="metric-value">Controls · Automation · Robotics</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Location</div>
+              <div class="metric-value">Middle TN · Open to move</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-header">
+        <div class="section-kicker">About</div>
+        <h2 class="section-title">Who I am as an engineer</h2>
+      </div>
+      <div class="section-grid">
+        <div class="about-text">
+          <p>
+            I like living where mechanics, electronics, and code overlap.
+            Whether it’s a conveyor-based sorting system, a laser weed-removal
+            cart, or a 3D printer playing tic-tac-toe, I enjoy taking a project
+            from idea to working hardware—then tightening up the controls until
+            it behaves.
+          </p>
+          <br />
+          <p>
+            At MTSU, I’ve spent a lot of time in labs and shops: wiring panels,
+            tuning controllers, writing PLC logic, and helping other students
+            debug their systems. I enjoy figuring out why something doesn’t
+            work, documenting the fix, and making it easy for the next person
+            to repeat.
+          </p>
+        </div>
+        <div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-label">Degree</div>
+              <div class="stat-value">B.S. Mechatronics, MTSU</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Target Roles</div>
+              <div class="stat-value">
+                Controls · Automation · Robotics · Electrical/Mechatronics
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Strengths</div>
+              <div class="stat-value">Hands-on, systems thinking, teaching</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights">
+      <div class="section-header">
+        <div class="section-kicker">Highlights</div>
+        <h2 class="section-title">What I’m good at</h2>
+      </div>
+      <div class="chip-row">
+        <span class="chip">PLC programming & troubleshooting</span>
+        <span class="chip">Conveyors, sensors, pneumatics</span>
+        <span class="chip">Robotics / motion control</span>
+        <span class="chip">DC/AC circuits & test equipment</span>
+        <span class="chip">SolidWorks assemblies & drawings</span>
+        <span class="chip">Writing clear procedures & lab docs</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-kicker">Projects</div>
+        <h2 class="section-title">Building real systems, not just simulations</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">
+              Automated Can/Box Sorting System (Cognex + PLC)
+            </h3>
+            <span class="card-meta">MTSU · 2025</span>
+          </div>
+          <div class="card-tags">
+            <span>Conveyors</span>
+            <span>Pneumatics</span>
+            <span>Cognex Vision</span>
+            <span>PLC</span>
+          </div>
+          <ul>
+            <li>
+              Designed and built a conveyor-based system to detect and sort
+              mixed cans and boxes using a Cognex camera and PLC-controlled
+              pneumatic actuator.
+            </li>
+            <li>
+              Tuned conveyor speeds and hopper loading to maximize singulation
+              and sorting accuracy; authored test plans and data collection
+              procedures.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Laser Weed-Removal Cart</h3>
+            <span class="card-meta">MTSU · 2025</span>
+          </div>
+          <div class="card-tags">
+            <span>SolidWorks</span>
+            <span>Motion & Drives</span>
+            <span>Safety Circuits</span>
+          </div>
+          <ul>
+            <li>
+              Developed a herbicide-free weed-removal platform integrating
+              motion, sensing, and laser safety interlocks.
+            </li>
+            <li>
+              Led CAD design in SolidWorks and supported machining; wired
+              drivers, power distribution, fusing, and E-stop circuitry to bring
+              up drive, steering, and laser actuation safely.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">
+              3D Printer Tic-Tac-Toe Pen Plotter (MATLAB + G-code)
+            </h3>
+            <span class="card-meta">MTSU · 2025</span>
+          </div>
+          <div class="card-tags">
+            <span>MATLAB</span>
+            <span>G-code</span>
+            <span>Motion Control</span>
+          </div>
+          <ul>
+            <li>
+              Wrote MATLAB routines to convert tic-tac-toe game state into
+              G-code for pen-plotting on a modified Ender 3.
+            </li>
+            <li>
+              Calibrated steps/mm, homing, and soft limits to produce consistent
+              line plots across a 3×3 grid.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience & Teaching -->
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-kicker">Experience</div>
+        <h2 class="section-title">Teaching, labs, and engineering work</h2>
+      </div>
+      <div class="columns-2">
+        <div>
+          <div class="list-title">Teaching & Lab Support</div>
+          <ul class="list-items">
+            <li>
+              Authored and maintain lab manuals for Electrical Circuits I & II
+              and Pneumatics labs at MTSU.
+            </li>
+            <li>
+              Help students debug circuits, pneumatics setups, and data
+              collection workflows, emphasizing safety and repeatable steps.
+            </li>
+            <li>
+              Grade lab work and give feedback focused on both technical
+              correctness and clear documentation.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="list-title">Industry & Projects</div>
+          <ul class="list-items">
+            <li>
+              Seeking full-time roles in controls, automation, robotics, or
+              electrical/mechatronics engineering starting Jan 2026.
+            </li>
+            <li>
+              Comfortable stepping into manufacturing, test, or R&D environments
+              and quickly learning client-specific standards and hardware.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volunteering / Outreach -->
+    <section id="volunteering">
+      <div class="section-header">
+        <div class="section-kicker">Outreach</div>
+        <h2 class="section-title">Giving back through engineering</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">Engineering Outreach & Demos</h3>
+            <span class="card-meta">MTSU</span>
+          </div>
+          <p>
+            Support MTSU Engineering Technology outreach events by demoing
+            student projects and explaining automation and robotics concepts to
+            K–12 students, parents, and visitors—making engineering feel
+            approachable and practical.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-kicker">Skills</div>
+        <h2 class="section-title">Tools and technologies I use</h2>
+      </div>
+      <div class="columns-2">
+        <div>
+          <div class="list-title">Mechanical & CAD</div>
+          <ul class="list-items">
+            <li>SolidWorks (assemblies, drawings, basic GD&T)</li>
+            <li>Onshape (familiar)</li>
+            <li>Machining: mill & lathe (basic)</li>
+          </ul>
+
+          <div class="list-title" style="margin-top: 0.8rem;">
+            Controls & Automation
+          </div>
+          <ul class="list-items">
+            <li>PLC programming (ladder logic)</li>
+            <li>Industrial sensors & pneumatics</li>
+            <li>Safety circuits & E-stops</li>
+          </ul>
+        </div>
+        <div>
+          <div class="list-title">Electrical & Test</div>
+          <ul class="list-items">
+            <li>DC/AC circuit analysis</li>
+            <li>Oscilloscope, DMM, power supplies</li>
+            <li>Panel wiring (basic)</li>
+          </ul>
+
+          <div class="list-title" style="margin-top: 0.8rem;">
+            Software
+          </div>
+          <ul class="list-items">
+            <li>MATLAB</li>
+            <li>Python</li>
+            <li>LabVIEW</li>
+            <li>Excel for data analysis & charts</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-title">Let’s talk about building things</h2>
+      </div>
+      <div class="contact-box">
+        <div class="contact-text">
+          I’m actively looking for full-time roles in controls, automation,
+          robotics, or electrical/mechatronics engineering starting January
+          2026. If you’re hiring for someone who likes being close to the
+          hardware and isn’t afraid of debugging, I’d be happy to talk.
+        </div>
+        <div class="contact-details">
+          <div>Email: <a href="mailto:003manav@gmail.com">003manav@gmail.com</a></div>
+          <div>Phone: <a href="tel:13342336842">334-233-6842</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Manav Patel. Built by hand.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
