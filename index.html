@@ -1,13 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Manav Patel | Mechatronics & Automation</title>
+  <title>Manav Patel | Mechatronics & Automation Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Portfolio of Manav Patel, Mechatronics & Automation Engineering student at MTSU."
+    content="Portfolio of Manav Patel, a Mechatronics & Automation engineer showcasing projects, teaching, and volunteer work in controls, robotics, and STEM education."
   />
+  <meta name="author" content="Manav Patel" />
+  <meta name="robots" content="index, follow" />
+
   <style>
     :root {
       --bg: #050816;
@@ -82,7 +86,6 @@
       border-color: var(--accent-soft);
     }
 
-    /* Hero */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
@@ -227,13 +230,14 @@
       color: var(--muted);
       font-size: 0.7rem;
       margin-bottom: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     .metric-value {
       font-weight: 600;
     }
 
-    /* Sections */
     section {
       margin-bottom: 3.5rem;
     }
@@ -293,7 +297,6 @@
       font-weight: 600;
     }
 
-    /* Highlights */
     .chip-row {
       display: flex;
       flex-wrap: wrap;
@@ -309,7 +312,6 @@
       color: #e0f2fe;
     }
 
-    /* Cards / projects */
     .cards {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
@@ -365,7 +367,6 @@
       margin-bottom: 0.2rem;
     }
 
-    /* Two-column list sections */
     .columns-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -388,7 +389,6 @@
       margin-bottom: 0.25rem;
     }
 
-    /* Contact */
     .contact-box {
       background: linear-gradient(
         135deg,
@@ -458,6 +458,7 @@
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#volunteering">Volunteer</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -466,19 +467,20 @@
     <section class="hero">
       <div class="hero-text">
         <h1>
-          Mechatronics & Automation<br />
-          <span>who actually builds the hardware.</span>
-        </h1>
-        <p class="hero-subtitle">
-          I’m a Mechatronics Engineering student at MTSU (graduating Dec 2025)
-          focused on controls, automation, and hands-on troubleshooting—designing
-          in CAD, wiring systems, and bringing robots, conveyors, and test
-          setups to life.
-        </p>
+  	 Mechatronics & Automation<br />
+  	 <span>with a focus on real hardware.</span>
+	</h1>
+	<p class="hero-subtitle">
+  	 I’m a Mechatronics Engineering student at MTSU. Most of my work sits at the
+  	 intersection of electrical, mechanical, and controls—PLC/robot projects,
+  	 vision-based sorters, and custom electronics that actually run on the bench,
+  	 not just in simulation.
+	</p>
+
         <div class="hero-tags">
           <span class="tag">Controls & Automation</span>
-          <span class="tag">Electrical & Robotics</span>
-          <span class="tag">Hands-on Problem Solver</span>
+          <span class="tag">Robotics & Motion</span>
+          <span class="tag">STEM Teaching</span>
         </div>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projects">
@@ -496,27 +498,29 @@
       <aside class="hero-card">
         <div class="hero-card-inner">
           <div class="hero-pill">Snapshot</div>
-          <h2>Early-career engineer for controls, robotics, and automation.</h2>
+          <h2>Engineer who is comfortable around machines and test benches.</h2>
           <p class="hero-subtitle" style="margin-bottom: 0.8rem;">
-            Comfortable on the shop floor or in the lab: building, wiring, and
-            debugging real systems—not just simulations.
+             I spend a lot of time in labs and shops: bringing up panels, tracing wiring,
+             tuning motion, and walking other people through what the system is doing..
           </p>
           <div class="hero-metrics">
             <div class="metric">
-              <div class="metric-label">Graduation</div>
-              <div class="metric-value">Dec 2025 · MTSU</div>
+              <div class="metric-label">Degree</div>
+              <div class="metric-value">Mechatronics · MTSU</div>
             </div>
             <div class="metric">
-              <div class="metric-label">Focus</div>
-              <div class="metric-value">Controls & Automation</div>
+              <div class="metric-label">Focus Areas</div>
+              <div class="metric-value">
+                Controls · Automation<br />Robotics · Mechatronics
+              </div>
             </div>
             <div class="metric">
-              <div class="metric-label">Looking for</div>
-              <div class="metric-value">Controls · Automation · Robotics</div>
+              <div class="metric-label">Experience</div>
+              <div class="metric-value">Lab instructor & STEM outreach</div>
             </div>
             <div class="metric">
               <div class="metric-label">Location</div>
-              <div class="metric-value">Middle TN · Open to move</div>
+              <div class="metric-value">Middle Tennessee</div>
             </div>
           </div>
         </div>
@@ -532,19 +536,17 @@
       <div class="section-grid">
         <div class="about-text">
           <p>
-            I like living where mechanics, electronics, and code overlap.
-            Whether it’s a conveyor-based sorting system, a laser weed-removal
-            cart, or a 3D printer playing tic-tac-toe, I enjoy taking a project
-            from idea to working hardware—then tightening up the controls until
-            it behaves.
+             My background is a mix of controls, robotics, and hands-on build work.
+  	     I’ve designed mechanisms in SolidWorks, wired panels and pneumatics,
+             brought up PLC logic with vision and sensors, and built smaller
+             electronics projects like a Bluetooth speaker and motion demos..
           </p>
           <br />
           <p>
-            At MTSU, I’ve spent a lot of time in labs and shops: wiring panels,
-            tuning controllers, writing PLC logic, and helping other students
-            debug their systems. I enjoy figuring out why something doesn’t
-            work, documenting the fix, and making it easy for the next person
-            to repeat.
+             At MTSU I split my time between my own projects and helping other students
+             in lab. That means tracking down why something doesn’t work, fixing it at
+             the hardware or code level, and then documenting the steps so it’s easy to
+             repeat later.
           </p>
         </div>
         <div>
@@ -554,14 +556,14 @@
               <div class="stat-value">B.S. Mechatronics, MTSU</div>
             </div>
             <div class="stat-card">
-              <div class="stat-label">Target Roles</div>
-              <div class="stat-value">
-                Controls · Automation · Robotics · Electrical/Mechatronics
-              </div>
+              <div class="stat-label">Focus</div>
+              <div class="stat-value">Controls, robotics, and automation</div>
             </div>
             <div class="stat-card">
               <div class="stat-label">Strengths</div>
-              <div class="stat-value">Hands-on, systems thinking, teaching</div>
+              <div class="stat-value">
+                Hands-on builds, systems thinking, teaching
+              </div>
             </div>
           </div>
         </div>
@@ -572,15 +574,14 @@
     <section id="highlights">
       <div class="section-header">
         <div class="section-kicker">Highlights</div>
-        <h2 class="section-title">What I’m good at</h2>
+        <h2 class="section-title">What I like working on</h2>
       </div>
       <div class="chip-row">
-        <span class="chip">PLC programming & troubleshooting</span>
-        <span class="chip">Conveyors, sensors, pneumatics</span>
-        <span class="chip">Robotics / motion control</span>
-        <span class="chip">DC/AC circuits & test equipment</span>
-        <span class="chip">SolidWorks assemblies & drawings</span>
-        <span class="chip">Writing clear procedures & lab docs</span>
+        <span class="chip">PLC/HMI and industrial automation</span>
+        <span class="chip">Machine vision & sensors</span>
+        <span class="chip">Motion control & robotics</span>
+        <span class="chip">Electronics & custom builds</span>
+        <span class="chip">Teaching STEM & mentoring</span>
       </div>
     </section>
 
@@ -591,140 +592,218 @@
         <h2 class="section-title">Building real systems, not just simulations</h2>
       </div>
       <div class="cards">
+        <!-- Automated Box & Can Sorter -->
         <article class="card">
           <div class="card-header">
             <h3 class="card-title">
-              Automated Can/Box Sorting System (Cognex + PLC)
+              Automated Box & Can Sorting System (Cognex + PLC)
             </h3>
-            <span class="card-meta">MTSU · 2025</span>
+            <span class="card-meta">Conveyors · Pneumatics · Machine Vision</span>
           </div>
           <div class="card-tags">
-            <span>Conveyors</span>
-            <span>Pneumatics</span>
-            <span>Cognex Vision</span>
-            <span>PLC</span>
+            <span>Rockwell / PLC</span>
+            <span>Cognex In-Sight</span>
+            <span>Photoeyes & encoders</span>
           </div>
+          <p>
+            A conveyor-based sorter that takes a mixed stream of boxes and cans from a
+            hopper, detects each item with a Cognex camera, and kicks it into the
+            correct bin using a PLC-controlled pneumatic cylinder.
+          </p>
           <ul>
             <li>
-              Designed and built a conveyor-based system to detect and sort
-              mixed cans and boxes using a Cognex camera and PLC-controlled
-              pneumatic actuator.
+              Designed and tuned the hopper and conveyor system to maximize
+              singulation and reduce double-feeds into the vision zone.
             </li>
             <li>
-              Tuned conveyor speeds and hopper loading to maximize singulation
-              and sorting accuracy; authored test plans and data collection
-              procedures.
+              Integrated Cognex In-Sight with the PLC, setting up inspections,
+              digital outputs, and I/O mapping for sort decisions.
+            </li>
+            <li>
+              Developed test procedures to measure throughput and sorting accuracy,
+              logging data for different speeds and hopper load levels.
             </li>
           </ul>
+          <p class="card-meta" style="margin-top:0.4rem;">
+            Media: photos and demo video coming soon.
+          </p>
         </article>
 
-        <article class="card">
-          <div class="card-header">
-            <h3 class="card-title">Laser Weed-Removal Cart</h3>
-            <span class="card-meta">MTSU · 2025</span>
-          </div>
-          <div class="card-tags">
-            <span>SolidWorks</span>
-            <span>Motion & Drives</span>
-            <span>Safety Circuits</span>
-          </div>
-          <ul>
-            <li>
-              Developed a herbicide-free weed-removal platform integrating
-              motion, sensing, and laser safety interlocks.
-            </li>
-            <li>
-              Led CAD design in SolidWorks and supported machining; wired
-              drivers, power distribution, fusing, and E-stop circuitry to bring
-              up drive, steering, and laser actuation safely.
-            </li>
-          </ul>
-        </article>
-
+        <!-- Tic Tac Toe Robot / Pen Plotter -->
         <article class="card">
           <div class="card-header">
             <h3 class="card-title">
-              3D Printer Tic-Tac-Toe Pen Plotter (MATLAB + G-code)
+              Tic-Tac-Toe Robot on a 3D Printer (MATLAB + G-code)
             </h3>
-            <span class="card-meta">MTSU · 2025</span>
+            <span class="card-meta">Motion Control · MATLAB · G-code</span>
           </div>
           <div class="card-tags">
-            <span>MATLAB</span>
-            <span>G-code</span>
-            <span>Motion Control</span>
+            <span>Ender 3</span>
+            <span>Pen plotter</span>
+            <span>Game logic</span>
           </div>
+          <p>
+            Converted an Ender 3 into a tic-tac-toe robot by mounting a pen,
+            generating G-code toolpaths from MATLAB, and adding basic game logic so
+            it can play against a human on a 3×3 grid.
+          </p>
           <ul>
             <li>
-              Wrote MATLAB routines to convert tic-tac-toe game state into
-              G-code for pen-plotting on a modified Ender 3.
+              Wrote MATLAB scripts to translate board state into coordinates and
+              generate clean G-code moves for X/Y/Z.
             </li>
             <li>
-              Calibrated steps/mm, homing, and soft limits to produce consistent
-              line plots across a 3×3 grid.
+              Calibrated steps/mm, homing offsets, and soft limits to get consistent,
+              repeatable lines and centered symbols on each square.
+            </li>
+            <li>
+              Debugged motion issues like backlash and missed steps, and tuned speeds
+              and accelerations for reliable plotting.
             </li>
           </ul>
+          <p class="card-meta" style="margin-top:0.4rem;">
+            Media: example plots and gameplay video coming soon.
+          </p>
+        </article>
+
+        <!-- Bluetooth Speaker -->
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">
+              Custom Bluetooth Speaker with Op-Amp Audio Stage
+            </h3>
+            <span class="card-meta">Analog Electronics · Audio · Enclosure Design</span>
+          </div>
+          <div class="card-tags">
+            <span>Op-amp amplifier</span>
+            <span>Bluetooth module</span>
+            <span>Power & wiring</span>
+          </div>
+          <p>
+            Built a Bluetooth speaker from scratch, combining a Bluetooth audio
+            module with a custom op-amp-based amplifier stage, power regulation, and
+            a hand-built enclosure.
+          </p>
+          <ul>
+            <li>
+              Designed and tested the op-amp circuit to get clean gain and low noise
+              while driving the speaker load from a battery-powered supply.
+            </li>
+            <li>
+              Integrated the Bluetooth module, amplifier, and power circuitry with
+              proper grounding and wiring layout to minimize hum and interference.
+            </li>
+            <li>
+              Prototyped the enclosure, mounting hardware, and controls to make the
+              system durable and easy to use.
+            </li>
+          </ul>
+          <p class="card-meta" style="margin-top:0.4rem;">
+            Media: build photos and sound demo coming soon.
+          </p>
         </article>
       </div>
     </section>
 
-    <!-- Experience & Teaching -->
+    <!-- Experience -->
     <section id="experience">
       <div class="section-header">
         <div class="section-kicker">Experience</div>
-        <h2 class="section-title">Teaching, labs, and engineering work</h2>
+        <h2 class="section-title">Teaching, labs, and project work</h2>
       </div>
       <div class="columns-2">
         <div>
-          <div class="list-title">Teaching & Lab Support</div>
+          <div class="list-title">Lab Instructor & Course Support</div>
           <ul class="list-items">
             <li>
-              Authored and maintain lab manuals for Electrical Circuits I & II
-              and Pneumatics labs at MTSU.
+              Serve as a lab instructor/assistant for Electrical Circuits I & II and
+              Pneumatics, working with dozens of students each semester.
             </li>
             <li>
-              Help students debug circuits, pneumatics setups, and data
-              collection workflows, emphasizing safety and repeatable steps.
+              Authored and maintain detailed lab manuals that walk students through
+              wiring, measurement, troubleshooting, and data collection.
             </li>
             <li>
-              Grade lab work and give feedback focused on both technical
-              correctness and clear documentation.
+              Spend a lot of time at the bench helping students debug circuits,
+              pneumatics manifolds, and measurement setups—teaching them how to
+              think through problems instead of just giving answers.
+            </li>
+            <li>
+              Give feedback on lab reports that covers both technical correctness
+              and how clearly they explain their work.
             </li>
           </ul>
         </div>
         <div>
-          <div class="list-title">Industry & Projects</div>
+          <div class="list-title">Engineering Project Work</div>
           <ul class="list-items">
             <li>
-              Seeking full-time roles in controls, automation, robotics, or
-              electrical/mechatronics engineering starting Jan 2026.
+              Co-led the design and build of a laser weed-removal cart, integrating
+              motion, sensing, and laser safety interlocks.
             </li>
             <li>
-              Comfortable stepping into manufacturing, test, or R&D environments
-              and quickly learning client-specific standards and hardware.
+              Handled a mix of SolidWorks design, aluminum machining on CNC mill and
+              lathe, and wiring up drivers, power, fusing, and E-stop circuitry.
+            </li>
+            <li>
+              Regularly work across mechanical, electrical, and software boundaries
+              to get systems moving reliably and safely.
             </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Volunteering / Outreach -->
+    <!-- Volunteer & Outreach -->
     <section id="volunteering">
       <div class="section-header">
-        <div class="section-kicker">Outreach</div>
-        <h2 class="section-title">Giving back through engineering</h2>
+        <div class="section-kicker">Volunteer</div>
+        <h2 class="section-title">STEM outreach & mentoring</h2>
       </div>
       <div class="cards">
         <article class="card">
           <div class="card-header">
-            <h3 class="card-title">Engineering Outreach & Demos</h3>
-            <span class="card-meta">MTSU</span>
+            <h3 class="card-title">MTSU Engineering Ambassador</h3>
+            <span class="card-meta">MTSU College of Engineering & Technology</span>
           </div>
           <p>
-            Support MTSU Engineering Technology outreach events by demoing
-            student projects and explaining automation and robotics concepts to
-            K–12 students, parents, and visitors—making engineering feel
-            approachable and practical.
+            Represent the MTSU engineering department at events and tours, talking
+            with prospective students and families about labs, projects, and what
+            mechatronics actually looks like day-to-day.
           </p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">STEM Instructor – Blackman High School</h3>
+            <span class="card-meta">Murfreesboro, TN</span>
+          </div>
+          <p>
+            Volunteered as a STEM instructor, teaching students how to use Arduino
+            and basic electronics to bring small projects to life and giving them a
+            first look at embedded systems and programming.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">TDOT Summer Camp – Robotics & Smart Cities</h3>
+            <span class="card-meta">Arduino · Drones · Traffic Simulation</span>
+          </div>
+          <p>
+            Ran a summer camp with TDOT where I taught students how to:
+          </p>
+          <ul>
+            <li>Build and program autonomous line-following robots with Arduino.</li>
+            <li>
+              Use Python to control face-recognizing, face-following drones and
+              understand the basics of computer vision.
+            </li>
+            <li>
+              Create traffic simulations in SUMO to explore how intersections and
+              timing affect congestion and safety.
+            </li>
+          </ul>
         </article>
       </div>
     </section>
@@ -737,38 +816,38 @@
       </div>
       <div class="columns-2">
         <div>
-          <div class="list-title">Mechanical & CAD</div>
+          <div class="list-title">PLC / HMI & Automation</div>
           <ul class="list-items">
-            <li>SolidWorks (assemblies, drawings, basic GD&T)</li>
-            <li>Onshape (familiar)</li>
-            <li>Machining: mill & lathe (basic)</li>
+            <li>PLC/HMI development and troubleshooting</li>
+            <li>Rockwell Studio 5000, FactoryTalk View / PanelView</li>
+            <li>Siemens TIA Portal (basic)</li>
+            <li>I/O mapping, safety relays, and interlocks</li>
           </ul>
 
           <div class="list-title" style="margin-top: 0.8rem;">
-            Controls & Automation
+            Machine Vision & Sensors
           </div>
           <ul class="list-items">
-            <li>PLC programming (ladder logic)</li>
-            <li>Industrial sensors & pneumatics</li>
-            <li>Safety circuits & E-stops</li>
+            <li>Cognex In-Sight & In-Sight Designer</li>
+            <li>Photoeyes, encoders, proximity sensors</li>
+            <li>Basic vision inspection setup and integration to PLCs</li>
           </ul>
         </div>
         <div>
-          <div class="list-title">Electrical & Test</div>
+          <div class="list-title">Mechanical Design & Machining</div>
           <ul class="list-items">
-            <li>DC/AC circuit analysis</li>
-            <li>Oscilloscope, DMM, power supplies</li>
-            <li>Panel wiring (basic)</li>
+            <li>SolidWorks assemblies and drawings</li>
+            <li>GD&amp;T, basic DFM/DFA considerations</li>
+            <li>Aluminum machining on CNC mill and lathe</li>
           </ul>
 
           <div class="list-title" style="margin-top: 0.8rem;">
-            Software
+            Electrical, Pneumatics & Software
           </div>
           <ul class="list-items">
-            <li>MATLAB</li>
-            <li>Python</li>
-            <li>LabVIEW</li>
-            <li>Excel for data analysis & charts</li>
+            <li>Panel wiring, I/O layout, and basic troubleshooting</li>
+            <li>Pneumatic valves, cylinders, and manifolds</li>
+            <li>MATLAB, LabVIEW, Python</li>
           </ul>
         </div>
       </div>
@@ -778,14 +857,13 @@
     <section id="contact">
       <div class="section-header">
         <div class="section-kicker">Contact</div>
-        <h2 class="section-title">Let’s talk about building things</h2>
+        <h2 class="section-title">Get in touch</h2>
       </div>
       <div class="contact-box">
         <div class="contact-text">
-          I’m actively looking for full-time roles in controls, automation,
-          robotics, or electrical/mechatronics engineering starting January
-          2026. If you’re hiring for someone who likes being close to the
-          hardware and isn’t afraid of debugging, I’d be happy to talk.
+          If you’d like to talk about projects, collaboration, or future opportunities,
+          feel free to reach out. I’m always up for conversations about controls,
+          automation, robotics, or STEM outreach.
         </div>
         <div class="contact-details">
           <div>Email: <a href="mailto:003manav@gmail.com">003manav@gmail.com</a></div>
@@ -804,5 +882,3 @@
   </script>
 </body>
 </html>
-
-
