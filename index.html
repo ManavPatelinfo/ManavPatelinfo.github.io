@@ -10,443 +10,7 @@
   />
   <meta name="author" content="Manav Patel" />
   <meta name="robots" content="index, follow" />
-
-  <style>
-    :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --card: #111827;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --radius-lg: 1.25rem;
-      --radius-sm: 0.75rem;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.4);
-      --max-width: 1040px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.4rem;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      padding-bottom: 0.15rem;
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-      border-color: var(--accent-soft);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
-      gap: 2.75rem;
-      align-items: center;
-      margin-bottom: 3.5rem;
-    }
-
-    .hero-text h1 {
-      font-size: clamp(2.4rem, 5vw, 3.1rem);
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .hero-text h1 span {
-      color: var(--accent);
-    }
-
-    .hero-subtitle {
-      color: var(--muted);
-      max-width: 34rem;
-      margin-bottom: 1.6rem;
-      font-size: 0.98rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.7rem;
-    }
-
-    .tag {
-      font-size: 0.78rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      padding: 0.25rem 0.75rem;
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.55rem 1.15rem;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: transparent;
-      color: var(--text);
-      transition: transform 0.15s ease, box-shadow 0.15s ease,
-        background 0.15s ease, border-color 0.15s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #22d3ee, #0ea5e9);
-      box-shadow: 0 16px 40px rgba(56, 189, 248, 0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 20px 60px rgba(56, 189, 248, 0.4);
-    }
-
-    .btn-ghost {
-      border-color: var(--border);
-      background: rgba(15, 23, 42, 0.85);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent-soft);
-      background: rgba(15, 23, 42, 1);
-      color: var(--text);
-    }
-
-    .hero-card {
-      background: radial-gradient(circle at top, #0b1120 0, #020617 55%);
-      border-radius: var(--radius-lg);
-      padding: 1.3rem 1.3rem 1.4rem;
-      border: 1px solid rgba(30, 64, 175, 0.7);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at top left,
-        rgba(56, 189, 248, 0.18),
-        transparent 55%
-      );
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-pill {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-card h2 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.7rem;
-      margin-top: 1rem;
-    }
-
-    .metric {
-      padding: 0.7rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(15, 23, 42, 0.9);
-      background: rgba(15, 23, 42, 0.95);
-      font-size: 0.78rem;
-    }
-
-    .metric-label {
-      color: var(--muted);
-      font-size: 0.7rem;
-      margin-bottom: 0.15rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .metric-value {
-      font-weight: 600;
-    }
-
-    section {
-      margin-bottom: 3.5rem;
-    }
-
-    .section-header {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-kicker {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
-      gap: 2.25rem;
-    }
-
-    .about-text {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.8rem;
-      margin-top: 1.4rem;
-    }
-
-    .stat-card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-sm);
-      padding: 0.8rem;
-      border: 1px solid var(--border);
-      text-align: left;
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-bottom: 0.15rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .stat-value {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .chip {
-      font-size: 0.78rem;
-      border-radius: 999px;
-      padding: 0.25rem 0.7rem;
-      background: var(--accent-soft);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      color: #e0f2fe;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1rem;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius-sm);
-      padding: 1rem 1.1rem;
-      border: 1px solid var(--border);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.35rem;
-    }
-
-    .card-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-    }
-
-    .card-meta {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin: 0.5rem 0 0.4rem;
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .card ul {
-      margin-top: 0.4rem;
-      padding-left: 1.1rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .card ul li {
-      margin-bottom: 0.2rem;
-    }
-
-    .columns-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
-    }
-
-    .list-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .list-items {
-      list-style: none;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .list-items li {
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-box {
-      background: linear-gradient(
-        135deg,
-        rgba(56, 189, 248, 0.13),
-        rgba(15, 23, 42, 0.95)
-      );
-      border-radius: var(--radius-lg);
-      padding: 1.4rem 1.3rem;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .contact-text {
-      max-width: 26rem;
-      font-size: 0.9rem;
-    }
-
-    .contact-details {
-      font-size: 0.9rem;
-    }
-
-    .contact-details a {
-      color: #e0f2fe;
-    }
-
-    footer {
-      margin-top: 2.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 840px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .section-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding-inline: 1.1rem;
-      }
-      .about-stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main>
@@ -466,19 +30,19 @@
     <section class="hero">
       <div class="hero-text">
         <h1>
-  	 Mechatronics & Automation<br />
-  	 <span>with a focus on real hardware.</span>
-	</h1>
-	<p class="hero-subtitle">
-  	 I’m a Mechatronics Engineering student at MTSU. Most of my work sits at the
-  	 intersection of electrical, mechanical, and controls—PLC/robot projects,
-  	 vision-based sorters, and custom electronics that actually run on the bench,
-  	 not just in simulation.
-	</p>
+          Mechatronics &amp; Automation<br />
+          <span>with a focus on real hardware.</span>
+        </h1>
+        <p class="hero-subtitle">
+          I’m a Mechatronics Engineering student at MTSU. Most of my work sits at the
+          intersection of electrical, mechanical, and controls—PLC/HMI projects,
+          vision-based sorters, and custom electronics that actually run on the bench,
+          not just in simulation.
+        </p>
 
         <div class="hero-tags">
-          <span class="tag">Controls & Automation</span>
-          <span class="tag">Robotics & Motion</span>
+          <span class="tag">Controls &amp; Automation</span>
+          <span class="tag">Robotics &amp; Motion</span>
           <span class="tag">STEM Teaching</span>
         </div>
         <div class="hero-actions">
@@ -499,8 +63,8 @@
           <div class="hero-pill">Snapshot</div>
           <h2>Engineer who is comfortable around machines and test benches.</h2>
           <p class="hero-subtitle" style="margin-bottom: 0.8rem;">
-             I spend a lot of time in labs and shops: bringing up panels, tracing wiring,
-             tuning motion, and walking other people through what the system is doing..
+            I spend a lot of time in labs and shops: bringing up panels, tracing wiring,
+            tuning motion, and walking other people through what the system is doing.
           </p>
           <div class="hero-metrics">
             <div class="metric">
@@ -515,7 +79,7 @@
             </div>
             <div class="metric">
               <div class="metric-label">Experience</div>
-              <div class="metric-value">Lab instructor & STEM outreach</div>
+              <div class="metric-value">Lab instructor &amp; STEM outreach</div>
             </div>
             <div class="metric">
               <div class="metric-label">Location</div>
@@ -535,17 +99,17 @@
       <div class="section-grid">
         <div class="about-text">
           <p>
-             My background is a mix of controls, robotics, and hands-on build work.
-  	     I’ve designed mechanisms in SolidWorks, wired panels and pneumatics,
-             brought up PLC logic with vision and sensors, and built smaller
-             electronics projects like a Bluetooth speaker and motion demos..
+            My background is a mix of controls, robotics, and hands-on build work.
+            I’ve designed mechanisms in SolidWorks, wired panels and pneumatics,
+            brought up PLC logic with vision and sensors, and built smaller
+            electronics projects like a Bluetooth speaker and motion demos.
           </p>
           <br />
           <p>
-             At MTSU I split my time between my own projects and helping other students
-             in lab. That means tracking down why something doesn’t work, fixing it at
-             the hardware or code level, and then documenting the steps so it’s easy to
-             repeat later.
+            At MTSU I split my time between my own projects and helping other students
+            in lab. That means tracking down why something doesn’t work, fixing it at
+            the hardware or code level, and then documenting the steps so it’s easy to
+            repeat later.
           </p>
         </div>
         <div>
@@ -577,10 +141,10 @@
       </div>
       <div class="chip-row">
         <span class="chip">PLC/HMI and industrial automation</span>
-        <span class="chip">Machine vision & sensors</span>
-        <span class="chip">Motion control & robotics</span>
-        <span class="chip">Electronics & custom builds</span>
-        <span class="chip">Teaching STEM & mentoring</span>
+        <span class="chip">Machine vision &amp; sensors</span>
+        <span class="chip">Motion control &amp; robotics</span>
+        <span class="chip">Electronics &amp; custom builds</span>
+        <span class="chip">Teaching STEM &amp; mentoring</span>
       </div>
     </section>
 
@@ -591,18 +155,103 @@
         <h2 class="section-title">Building real systems, not just simulations</h2>
       </div>
       <div class="cards">
+        <!-- Laser Weed-Removal Cart -->
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">
+              Laser Weed-Removal Cart (60W CO₂ + Steering Optics)
+            </h3>
+            <span class="card-meta">Motion · Safety · Optics</span>
+          </div>
+          <div class="card-tags">
+            <span>SolidWorks &amp; machining</span>
+            <span>Motor control &amp; interlocks</span>
+            <span>Optics &amp; laser steering</span>
+          </div>
+          <p>
+            A mobile platform designed to burn weeds using a 60W laser, with a
+            mirror-based steering assembly to position the beam and integrated
+            motion and safety interlocks.
+          </p>
+          <ul>
+            <li>
+              Co-led the design and build of the cart structure, drive system,
+              and laser mounting, from SolidWorks CAD to machined aluminum parts.
+            </li>
+            <li>
+              Implemented steering optics using high-speed motors and mirrors to
+              direct the beam to the target area for efficient weed burning.
+            </li>
+            <li>
+              Focused on safe power distribution, fusing, and E-stop behavior for
+              laser and motion hardware.
+            </li>
+          </ul>
+
+          <!-- Media gallery -->
+          <div class="media-grid">
+            <figure class="media-item">
+              <video
+                src="60wLasertest.mov"
+                controls
+                preload="metadata"
+                playsinline
+              ></video>
+              <figcaption>
+                60W laser first burn test on a small piece of wood to validate
+                power and burn efficiency.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <video
+                src="LaserSteering.mov"
+                controls
+                preload="metadata"
+                playsinline
+              ></video>
+              <figcaption>
+                Green laser steering test using two high-speed mirror motors to
+                create a controllable laser pattern for beam positioning.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="LaserMount.jpg"
+                alt="60W laser and steering assembly mounted on the cart"
+              />
+              <figcaption>
+                Laser and steering assembly mounted on the cart, showing the
+                optics, mirrors, and mechanical structure.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="Complete%20Build.jpeg"
+                alt="Final build of the laser weed-removal cart with Mr. Rick Taylor"
+              />
+              <figcaption>
+                Final build with Mr. Rick Taylor, Director of Industrial Studies
+                at MTSU, alongside the completed laser cart.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
         <!-- Automated Box & Can Sorter -->
         <article class="card">
           <div class="card-header">
             <h3 class="card-title">
-              Automated Box & Can Sorting System (Cognex + PLC)
+              Automated Box &amp; Can Sorting System (Cognex + PLC)
             </h3>
             <span class="card-meta">Conveyors · Pneumatics · Machine Vision</span>
           </div>
           <div class="card-tags">
             <span>Rockwell / PLC</span>
             <span>Cognex In-Sight</span>
-            <span>Photoeyes & encoders</span>
+            <span>Photoeyes &amp; encoders</span>
           </div>
           <p>
             A conveyor-based sorter that takes a mixed stream of boxes and cans from a
@@ -676,7 +325,7 @@
           <div class="card-tags">
             <span>Op-amp amplifier</span>
             <span>Bluetooth module</span>
-            <span>Power & wiring</span>
+            <span>Power &amp; wiring</span>
           </div>
           <p>
             Built a Bluetooth speaker from scratch, combining a Bluetooth audio
@@ -712,10 +361,10 @@
       </div>
       <div class="columns-2">
         <div>
-          <div class="list-title">Lab Instructor & Course Support</div>
+          <div class="list-title">Lab Instructor &amp; Course Support</div>
           <ul class="list-items">
             <li>
-              Serve as a lab instructor/assistant for Electrical Circuits I & II and
+              Serve as a lab instructor/assistant for Electrical Circuits I &amp; II and
               Pneumatics, working with dozens of students each semester.
             </li>
             <li>
@@ -757,13 +406,13 @@
     <section id="volunteering">
       <div class="section-header">
         <div class="section-kicker">Volunteer</div>
-        <h2 class="section-title">STEM outreach & mentoring</h2>
+        <h2 class="section-title">STEM outreach &amp; mentoring</h2>
       </div>
       <div class="cards">
         <article class="card">
           <div class="card-header">
             <h3 class="card-title">MTSU Engineering Ambassador</h3>
-            <span class="card-meta">MTSU College of Engineering & Technology</span>
+            <span class="card-meta">MTSU College of Engineering &amp; Technology</span>
           </div>
           <p>
             Represent the MTSU engineering department at events and tours, talking
@@ -786,7 +435,7 @@
 
         <article class="card">
           <div class="card-header">
-            <h3 class="card-title">TDOT Summer Camp – Robotics & Smart Cities</h3>
+            <h3 class="card-title">TDOT Summer Camp – Robotics &amp; Smart Cities</h3>
             <span class="card-meta">Arduino · Drones · Traffic Simulation</span>
           </div>
           <p>
@@ -815,25 +464,25 @@
       </div>
       <div class="columns-2">
         <div>
-          <div class="list-title">PLC / HMI & Automation</div>
+          <div class="list-title">PLC / HMI &amp; Automation</div>
           <ul class="list-items">
             <li>PLC/HMI development and troubleshooting</li>
-            <li>Rockwell Studio 5000, FactoryTalk View / PanelView</li>
+            <li>Rockwell Studio 5000, Ignition</li>
             <li>Siemens TIA Portal (basic)</li>
             <li>I/O mapping, safety relays, and interlocks</li>
           </ul>
 
           <div class="list-title" style="margin-top: 0.8rem;">
-            Machine Vision & Sensors
+            Machine Vision &amp; Sensors
           </div>
           <ul class="list-items">
-            <li>Cognex In-Sight & In-Sight Designer</li>
+            <li>Cognex In-Sight &amp; In-Sight Designer</li>
             <li>Photoeyes, encoders, proximity sensors</li>
             <li>Basic vision inspection setup and integration to PLCs</li>
           </ul>
         </div>
         <div>
-          <div class="list-title">Mechanical Design & Machining</div>
+          <div class="list-title">Mechanical Design &amp; Machining</div>
           <ul class="list-items">
             <li>SolidWorks assemblies and drawings</li>
             <li>GD&amp;T, basic DFM/DFA considerations</li>
@@ -841,7 +490,7 @@
           </ul>
 
           <div class="list-title" style="margin-top: 0.8rem;">
-            Electrical, Pneumatics & Software
+            Electrical, Pneumatics &amp; Software
           </div>
           <ul class="list-items">
             <li>Panel wiring, I/O layout, and basic troubleshooting</li>
@@ -881,4 +530,3 @@
   </script>
 </body>
 </html>
-
