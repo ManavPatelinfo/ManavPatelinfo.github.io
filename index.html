@@ -340,12 +340,12 @@
             <span class="card-meta">Motion Control · MATLAB · G-code</span>
           </div>
           <div class="card-tags">
-            <span>Ender 3</span>
+            <span>Ender 3D Printer</span>
             <span>Pen plotter</span>
             <span>Game logic</span>
           </div>
           <p>
-            Converted an Ender 3 into a tic-tac-toe robot by mounting a pen,
+            Converted an Ender 3D Printer into a tic-tac-toe robot by mounting a pen,
             generating G-code toolpaths from MATLAB, and adding basic game logic so
             it can play against a human on a 3×3 grid.
           </p>
@@ -363,9 +363,32 @@
               and accelerations for reliable plotting.
             </li>
           </ul>
-          <p class="card-meta" style="margin-top:0.4rem;">
-            Media: example plots and gameplay video coming soon.
-          </p>
+
+          <div class="media-grid">
+            <figure class="media-item">
+              <video
+                src="tictactoevid.mov"
+                controls
+                preload="metadata"
+                playsinline
+              ></video>
+              <figcaption>
+                Demo of the modified Ender 3D Printer playing tic-tac-toe by plotting X and O
+                moves on paper using generated G-code.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="MatLabSimulationTictactoe.PNG"
+                alt="MATLAB simulation of the tic-tac-toe robot moves"
+              />
+              <figcaption>
+                MATLAB simulation of the tic-tac-toe plotting sequence. The black dot
+                represents the tip of the marker as it moves through each stroke.
+              </figcaption>
+            </figure>
+          </div>
         </article>
 
         <!-- Bluetooth Speaker -->
@@ -473,6 +496,76 @@
               embedded control, sensor fusion, and tuning in a compact project.
             </li>
           </ul>
+
+          <div class="media-grid">
+            <figure class="media-item">
+              <img
+                src="TempWiringDiagram.PNG"
+                alt="Temperature sensor wiring diagram for the ESP32 fan project"
+              />
+              <figcaption>
+                Wiring diagram for the temperature sensor, showing how it interfaces
+                with the ESP32 to provide feedback for the PID speed controller.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="MotoranddriverWiringDiagram.PNG"
+                alt="Motor and driver wiring diagram for the fan"
+              />
+              <figcaption>
+                Motor and driver wiring diagram illustrating how the ESP32 controls
+                the fan through a dedicated driver stage and power connections.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="MotionWiringDiagram.PNG"
+                alt="Motion wiring diagram for overall fan control"
+              />
+              <figcaption>
+                Motion wiring diagram tying together the control signals, driver, and
+                fan hardware for smooth speed control.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="7segmentdispWiringDiagram.PNG"
+                alt="7-segment display wiring diagram"
+              />
+              <figcaption>
+                7-segment display wiring diagram used to show temperature or fan
+                status directly on the prototype.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="FanCircuit.PNG"
+                alt="Physical fan circuit build on the bench"
+              />
+              <figcaption>
+                Physical circuit build with the ESP32, driver, sensors, and fan
+                wired according to the diagrams for proof-of-concept testing.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <video
+                src="FanRunning.mov"
+                controls
+                preload="metadata"
+                playsinline
+              ></video>
+              <figcaption>
+                Video of the temperature-controlled fan running, showing the fan
+                responding smoothly as the control loop and occupancy logic operate.
+              </figcaption>
+            </figure>
+          </div>
         </article>
       </div>
     </section>
@@ -591,7 +684,7 @@
           <div class="list-title">PLC / HMI &amp; Automation</div>
           <ul class="list-items">
             <li>PLC/HMI development and troubleshooting</li>
-            <li>Rockwell Studio 5000, FactoryTalk View / PanelView</li>
+            <li>Rockwell Studio 5000, Ignition</li>
             <li>Siemens TIA Portal (basic)</li>
             <li>I/O mapping, safety relays, and interlocks</li>
           </ul>
@@ -614,8 +707,7 @@
           </ul>
 
           <div class="list-title" style="margin-top: 0.8rem;">
-            Electrical, Pneumatics &amp; Software
-          </div>
+            Electrical, Pneumatics &amp; Software</div>
           <ul class="list-items">
             <li>Panel wiring, I/O layout, and basic troubleshooting</li>
             <li>Pneumatic valves, cylinders, and manifolds</li>
