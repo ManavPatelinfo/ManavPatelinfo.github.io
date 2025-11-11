@@ -222,8 +222,8 @@
                 alt="60W laser and steering assembly mounted on the cart"
               />
               <figcaption>
-                Laser and steering assembly mounted on the cart, showing the
-                optics, mirrors, and mechanical structure.
+                Close-up of the laser and steering assembly, showing the mirrors,
+                mounts, and structural framing used to guide the beam.
               </figcaption>
             </figure>
 
@@ -234,7 +234,7 @@
               />
               <figcaption>
                 Final build with Mr. Rick Taylor, Director of Industrial Studies
-                at MTSU, alongside the completed laser cart.
+                at MTSU, alongside the completed laser cart prototype.
               </figcaption>
             </figure>
           </div>
@@ -346,9 +346,79 @@
               system durable and easy to use.
             </li>
           </ul>
-          <p class="card-meta" style="margin-top:0.4rem;">
-            Media: build photos and sound demo coming soon.
+
+          <div class="media-grid">
+            <figure class="media-item">
+              <img
+                src="SpeakerWiringDiagram.PNG"
+                alt="Block-level wiring diagram of the Bluetooth speaker project"
+              />
+              <figcaption>
+                Speaker wiring diagram showing how the Bluetooth module, op-amp
+                amplifier, power supply, and speaker are connected, with clear
+                grounding and signal paths.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="Physicalwiring.PNG"
+                alt="Physical wiring of the Bluetooth speaker electronics"
+              />
+              <figcaption>
+                Physical wiring of the amplifier, Bluetooth module, power rails, and
+                speaker connections, translating the schematic into a real build on
+                the bench.
+              </figcaption>
+            </figure>
+
+            <figure class="media-item">
+              <img
+                src="LabViewFIlterresults.PNG"
+                alt="LabVIEW plots of low-pass, high-pass, and band-pass filter results"
+              />
+              <figcaption>
+                LabVIEW filter results showing time-domain signals and power
+                spectra for the low-pass, high-pass, and band-pass filters used to
+                clean up the audio output and verify the filter design.
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ESP32 Temperature-Controlled Fan -->
+        <article class="card">
+          <div class="card-header">
+            <h3 class="card-title">
+              ESP32 Temperature-Controlled Fan with Occupancy Sensing
+            </h3>
+            <span class="card-meta">Embedded · PID Control · Prototyping</span>
+          </div>
+          <div class="card-tags">
+            <span>ESP32</span>
+            <span>PID speed control</span>
+            <span>IR presence sensor</span>
+          </div>
+          <p>
+            A proof-of-concept smart fan that uses an ESP32 to regulate fan speed
+            based on room temperature, but only runs when an infrared sensor detects
+            a person in the room.
           </p>
+          <ul>
+            <li>
+              Read temperature and used a PID loop to smoothly control the fan
+              speed instead of simple on/off thresholds, reducing overshoot and
+              oscillation.
+            </li>
+            <li>
+              Gated fan operation with an infrared presence sensor so the system
+              only consumes power when a human is detected in the space.
+            </li>
+            <li>
+              Drove a small DC fan as a proof-of-concept platform for applying
+              embedded control, sensor fusion, and tuning in a compact project.
+            </li>
+          </ul>
         </article>
       </div>
     </section>
@@ -467,7 +537,7 @@
           <div class="list-title">PLC / HMI &amp; Automation</div>
           <ul class="list-items">
             <li>PLC/HMI development and troubleshooting</li>
-            <li>Rockwell Studio 5000, Ignition</li>
+            <li>Rockwell Studio 5000, FactoryTalk View / PanelView</li>
             <li>Siemens TIA Portal (basic)</li>
             <li>I/O mapping, safety relays, and interlocks</li>
           </ul>
